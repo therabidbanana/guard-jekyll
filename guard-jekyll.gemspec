@@ -4,7 +4,7 @@ require 'guard/jekyll/version'
 
 Gem::Specification.new do |s|
   s.name        = "guard-sprockets"
-  s.version     = Guard::Sprockets::VERSION
+  s.version     = Guard::Jekyll::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["David Haslem"]
   s.email       = ["therabidbanana@gmail.com"]
