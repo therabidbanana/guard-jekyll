@@ -3,7 +3,7 @@ $:.push File.expand_path("../lib", __FILE__)
 require 'guard/jekyll/version'
 
 Gem::Specification.new do |s|
-  s.name        = "guard-sprockets"
+  s.name        = "guard-jekyll"
   s.version     = Guard::Jekyll::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["David Haslem"]
