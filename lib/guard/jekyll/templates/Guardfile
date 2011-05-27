@@ -1,0 +1,3 @@
+guard 'sprockets', :destination => "public/javascripts" do
+  watch (%r{app/assets/javascripts/application.js})
+end
