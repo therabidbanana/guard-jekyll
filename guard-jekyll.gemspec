@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path("../lib", __FILE__)
-require 'guard/jekyll/version'
+require 'guard/jekyll'
 
 Gem::Specification.new do |s|
   s.name        = "guard-jekyll"
@@ -13,10 +13,10 @@ Gem::Specification.new do |s|
   s.description = %q{guard file for jekyll}
 
   s.rubyforge_project = "guard-jekyll"
-  
+
   s.add_dependency 'guard', '>= 0.2.2'
   s.add_dependency "jekyll"
-  
-  s.files        = Dir.glob('{lib}/**/*') #+ %w[LICENSE README.rdoc]
-  s.require_path = 'lib'
+
+  s.files        = `git ls-files`.split("\n")
+  s.require_paths = ['lib']
 end
