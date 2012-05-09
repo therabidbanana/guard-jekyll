@@ -10,6 +10,7 @@ module Guard
 
     def initialize(watchers=[], options={})
       super
+      @working_path = File.expand_path(File.dirname("."))
     end
 
     def start
@@ -33,7 +34,7 @@ module Guard
     def jekyll!
       UI.info "Guard::Jekyll running."
 
-      Jekyll::Site.new(Jekyll.configuration({}))
+      ::Jekyll::Site.new(::Jekyll.configuration({'source' => @working_path}))
 
       UI.info "Guard::Jekyll complete."
     end
