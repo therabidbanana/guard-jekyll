@@ -10,7 +10,7 @@ in your project's directory root
 
 which will add this to your Guardfile  
 
-    guard 'jekyl' do
+    guard 'jekyll' do
       watch ('.*')
     end
 
