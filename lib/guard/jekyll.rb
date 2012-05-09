@@ -14,7 +14,9 @@ module Guard
     end
 
     def start
-       UI.info "Guard::Jekyll is watching for file changes..."
+      create_site
+      UI.info "Guard::Jekyll is watching for file changes..."
+      true
     end
 
     def run_all
@@ -34,9 +36,20 @@ module Guard
     def jekyll!
       UI.info "Guard::Jekyll running."
 
-      ::Jekyll::Site.new(::Jekyll.configuration({'source' => @working_path}))
+      @jekyll_site.process
 
       UI.info "Guard::Jekyll complete."
+    end
+
+    def create_site
+      options = {
+        'source'      => @working_path,
+        'destination' => File.join(@working_path, '_site'),
+        'plugins'     => File.join(@working_path, '_plugins')
+      }
+
+      config = ::Jekyll.configuration(options)
+      @jekyll_site = ::Jekyll::Site.new(config)
     end
   end
 end
