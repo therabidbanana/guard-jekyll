@@ -6,7 +6,7 @@ require 'jekyll'
 module Guard
   class Jekyll < Guard
 
-    VERSION = '0.0.1'
+    VERSION = '0.0.2'
 
     def initialize(watchers=[], options={})
       super
