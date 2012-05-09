@@ -16,6 +16,7 @@ module Guard
     def start
       create_site
       UI.info "Guard::Jekyll is watching for file changes..."
+      run_all
       true
     end
 
