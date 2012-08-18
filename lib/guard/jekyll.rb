@@ -40,6 +40,8 @@ module Guard
       @jekyll_site.process
 
       UI.info "Guard::Jekyll complete."
+    rescue Exception => e
+      UI.error "Guard::Jekyll failed: #{e}"
     end
 
     def create_site
