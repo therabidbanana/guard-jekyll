@@ -14,7 +14,6 @@ module Guard
     end
 
     def start
-      create_site
       UI.info "Guard::Jekyll is watching for file changes..."
       run_all
       true
@@ -37,9 +36,12 @@ module Guard
     def jekyll!
       UI.info "Guard::Jekyll running."
 
+      create_site
       @jekyll_site.process
 
       UI.info "Guard::Jekyll complete."
+    rescue Exception => e
+      UI.error "Guard::Jekyll failed: #{e}"
     end
 
     def create_site
