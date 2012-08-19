@@ -11,7 +11,7 @@ in your project's directory root
 which will add this to your Guardfile  
 
     guard 'jekyll' do
-      watch ('.*')
+      watch /.*/
     end
 
 ## TODO
