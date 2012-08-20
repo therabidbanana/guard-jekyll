@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
 
   s.rubyforge_project = "guard-jekyll"
 
-  s.add_dependency 'guard', '>= 0.2.2'
+  s.add_dependency 'guard', '>= 1.1.0'
   s.add_dependency "jekyll"
 
   s.files        = `git ls-files`.split("\n")
