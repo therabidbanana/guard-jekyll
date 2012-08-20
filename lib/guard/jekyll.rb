@@ -23,11 +23,11 @@ module Guard
       jekyll!
     end
 
-    def run_on_change(paths)
+    def run_on_changes(paths)
       jekyll!
     end
 
-    def run_on_deletion(paths)
+    def reload
       jekyll!
     end
 
@@ -42,6 +42,7 @@ module Guard
       UI.info "Guard::Jekyll complete."
     rescue Exception => e
       UI.error "Guard::Jekyll failed: #{e}"
+      throw :task_has_failed
     end
 
     def create_site
