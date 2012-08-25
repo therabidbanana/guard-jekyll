@@ -46,11 +46,12 @@ module Guard
     end
 
     def create_site
-      options = {
-        'source'      => @working_path,
-        'destination' => File.join(@working_path, '_site'),
-        'plugins'     => File.join(@working_path, '_plugins')
-      }
+      options = { 'source' => @working_path }
+
+      unless File.exists? File.join(@working_path, '_config.yml')
+        options['destination'] = File.join(@working_path, '_site')
+        options['plugins'] = File.join(@working_path, '_plugins')
+      end
 
       config = ::Jekyll.configuration(options)
       @jekyll_site = ::Jekyll::Site.new(config)
