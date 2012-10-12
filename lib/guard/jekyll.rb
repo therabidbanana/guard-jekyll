@@ -6,8 +6,6 @@ require 'jekyll'
 module Guard
   class Jekyll < Guard
 
-    VERSION = '0.2.0'
-
     def initialize(watchers=[], options={})
       super
       @working_path = File.expand_path(File.dirname("."))
