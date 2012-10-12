@@ -8,7 +8,9 @@ module Guard
 
     def initialize(watchers=[], options={})
       super
-      @working_path = File.expand_path(File.dirname("."))
+      @working_path = File.expand_path(options[:source]  || 
+                                       options['source'] || 
+                                       File.dirname("."))
     end
 
     def start
@@ -44,7 +46,7 @@ module Guard
     end
 
     def create_site
-      options = { 'source' => @working_path }
+      options = {'source' => @working_path}
 
       unless File.exists? File.join(@working_path, '_config.yml')
         options['destination'] = File.join(@working_path, '_site')
