@@ -1,10 +1,10 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path("../lib", __FILE__)
-require 'guard/jekyll'
+require 'guard/jekyll/version'
 
 Gem::Specification.new do |s|
   s.name        = "guard-jekyll"
-  s.version     = Guard::Jekyll::VERSION
+  s.version     = Guard::JekyllVersion::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["David Haslem"]
   s.email       = ["therabidbanana@gmail.com"]
