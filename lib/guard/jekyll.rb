@@ -7,15 +7,17 @@ require 'jekyll'
 
 module Guard
   class Jekyll < Guard
-
     def initialize(watchers = [], options = {})
-      super
-      @source = options[:source] || File.dirname('.')
+      defaults = {
+        :source => './',
+      }
+
+      super(watchers, options.merge(defaults))
     end
 
     def start
       UI.info 'Guard::Jekyll is watching for file changes'
-      create_site(@source)
+      create_site(options[:source])
     end
 
     def run_all
