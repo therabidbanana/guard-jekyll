@@ -28,18 +28,6 @@ module Guard
       jekyll!
     end
 
-    def run_on_additions(paths)
-      jekyll!
-    end
-
-    def run_on_modifications(paths)
-      jekyll!
-    end
-
-    def run_on_removals(paths)
-      jekyll!
-    end
-
     private
 
     def jekyll!
