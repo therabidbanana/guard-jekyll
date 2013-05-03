@@ -7,62 +7,40 @@ require 'jekyll'
 
 module Guard
   class Jekyll < Guard
-
     def initialize(watchers = [], options = {})
-      super
-      @source = options[:source] || File.dirname('.')
+      defaults = {
+        :source => './',
+      }
+
+      super(watchers, options.merge(defaults))
+
+      @site = Jekyll::Site.new(Jekyll.configuration(options))
     end
 
     def start
       UI.info 'Guard::Jekyll is watching for file changes'
-      create_site(@source)
+      site_process
     end
 
     def run_all
-      jekyll!
+      site_process
     end
 
     def run_on_changes(paths)
-      jekyll!
-    end
-
-    def run_on_additions(paths)
-      jekyll!
-    end
-
-    def run_on_modifications(paths)
-      jekyll!
-    end
-
-    def run_on_removals(paths)
-      jekyll!
+      site_process
     end
 
     private
 
-    def jekyll!
+    def process_site
       UI.info 'Guard::Jekyll running'
 
-      @jekyll_site.process
+      @site.process
 
       UI.info 'Guard::Jekyll complete'
     rescue Exception => e
       UI.error "Guard::Jekyll failed: #{e}"
       throw :task_has_failed
-    end
-
-    def create_site(source)
-      working_path = File.expand_path(source)
-
-      options = {'source' => working_path}
-
-      unless File.exists? File.join(working_path, '_config.yml')
-        options['destination'] = File.join(working_path, '_site')
-        options['plugins'] = File.join(working_path, '_plugins')
-      end
-
-      config = ::Jekyll.configuration(options)
-      @jekyll_site = ::Jekyll::Site.new(config)
     end
   end
 end
