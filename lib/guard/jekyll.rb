@@ -19,20 +19,20 @@ module Guard
 
     def start
       UI.info 'Guard::Jekyll is watching for file changes'
-      jekyll!
+      site_process
     end
 
     def run_all
-      jekyll!
+      site_process
     end
 
     def run_on_changes(paths)
-      jekyll!
+      site_process
     end
 
     private
 
-    def jekyll!
+    def process_site
       UI.info 'Guard::Jekyll running'
 
       @site.process
