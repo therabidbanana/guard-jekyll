@@ -12,7 +12,7 @@ module Guard
         :config => ['_config.yml'],
       }
 
-      super(watchers, options.merge(defaults))
+      super(watchers, defaults.merge(options))
     end
 
     def start
