@@ -1,6 +1,6 @@
 # Guard::Jekyll
 
-This is a guard for [jekyll](http://jekyllrb.com/).
+Guard::Jekyll automatically rebuilds websites with the [Jekyll static site generator](http://jekyllrb.com/) every time files are modified.
 
 ## Installation
 
