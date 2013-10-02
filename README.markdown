@@ -29,9 +29,14 @@ Then execute:
 Whenever you change a file in the Jekyll site directory now, the site will be rebuilt!
 
 ## Options
-* `:source` the source directory which jekyll reads files from (default `'./'`)
-* `:destination` the directory where Jekyll will write files to (default is `'./_site'`)
-* `:config` array of configuration files which jekyll will read (default `['./_config.yml']`)
+
+You can provide these options to Guard::Jekyll:
+
+* `:source` the source directory which Jekyll reads files from.
+* `:destination` the directory where Jekyll will write files to.
+* `:config` array of configuration files for Jekyll.
+
+Without options, Jekyll will use its built-in defaults.
 
 ## License
 

@@ -5,16 +5,6 @@ require 'jekyll'
 
 module Guard
   class Jekyll < Guard
-    def initialize(watchers = [], options = {})
-      defaults = {
-        :source => './',
-        :destination => './_site',
-        :config => ['_config.yml'],
-      }
-
-      super(watchers, defaults.merge(options))
-    end
-
     def start
       UI.info 'Guard::Jekyll is watching for file changes'
       rebuild
