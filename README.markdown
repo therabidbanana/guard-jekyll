@@ -1,6 +1,6 @@
 # Guard::Jekyll
 
-This is a guard for [jekyll](http://jekyllrb.com/).
+Guard::Jekyll automatically rebuilds websites with the [Jekyll static site generator](http://jekyllrb.com/) every time files are modified.
 
 ## Installation
 
@@ -18,15 +18,15 @@ Or install it yourself as:
 
 ## Usage
 
-Enter the jekyll site directory for which you want to use Guard::Jekyll. Create a Guardfile using `guard init`:
+Enter the Jekyll site directory for which you want to use Guard::Jekyll. Create a Guardfile using:
 
     $ guard init jekyll
 
-Execute guard:
+Then execute:
 
     $ guard
 
-Whenever you change a file in the jekyll site directory now, the site will be rebuilt!
+Whenever you change a file in the Jekyll site directory now, the site will be rebuilt!
 
 ## Options
 * `:source` the source directory which jekyll reads files from (default `'./'`)

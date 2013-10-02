@@ -9,8 +9,8 @@ Gem::Specification.new do |s|
   s.authors     = ["David Haslem"]
   s.email       = ["therabidbanana@gmail.com"]
   s.homepage    = "http://davidhaslem.com"
-  s.summary     = %q{guard file for jekyll}
-  s.description = %q{guard file for jekyll}
+  s.summary     = "Guard gem for Jekyll."
+  s.description = "Guard::Jekyll automatically rebuilds websites with the Jekyll static site generator."
 
   s.rubyforge_project = "guard-jekyll"
 
