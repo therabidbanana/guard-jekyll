@@ -1,10 +1,9 @@
-require 'guard'
-require 'guard/guard'
+require 'guard/compat/plugin'
 
 require 'jekyll'
 
 module Guard
-  class Jekyll < Guard
+  class Jekyll < Plugin
     def start
       UI.info 'Guard::Jekyll is watching for file changes'
       rebuild
@@ -14,7 +13,7 @@ module Guard
       rebuild
     end
 
-    def run_on_changes(paths)
+    def run_on_modifications(paths)
       rebuild
     end
 
