@@ -12,7 +12,6 @@ Gem::Specification.new do |s|
   s.summary     = "Guard gem for Jekyll."
   s.description = "Guard::Jekyll automatically rebuilds websites with the Jekyll static site generator."
 
-  s.rubyforge_project = "guard-jekyll"
 
   s.add_dependency 'guard', '>= 1.1.0'
   s.add_dependency "jekyll"
