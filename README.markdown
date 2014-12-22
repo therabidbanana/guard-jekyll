@@ -1,3 +1,7 @@
+# Old Fork:
+
+See https://github.com/guard/guard-jekyll 
+
 # Guard::Jekyll
 
 Guard::Jekyll automatically rebuilds websites with the [Jekyll static site generator](http://jekyllrb.com/) every time files are modified.
